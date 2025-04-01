@@ -1,0 +1,135 @@
+/* Reset default margin & padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Chat container */
+#chat-container {
+    width: 100%;
+    max-width: 400px;
+    height: 90vh;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Chat box where messages appear */
+#chat-box {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
+
+/* User message */
+.message.user {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin: 5px 0;
+    text-align: right;
+    display: block;
+    max-width: 80%;
+    margin-left: auto;
+    word-wrap: break-word;
+}
+
+/* Bot message */
+.message.bot {
+    background-color: #444;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin: 5px 0;
+    text-align: left;
+    display: block;
+    max-width: 80%;
+    margin-right: auto;
+    word-wrap: break-word;
+}
+
+/* Image Styling */
+.message.bot img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Input container */
+#input-container {
+    display: flex;
+    border-top: 1px solid #333;
+    background-color: #222;
+    padding: 10px;
+}
+
+/* Input field */
+#user-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+}
+
+/* Send button */
+#send-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-left: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Send button hover effect */
+#send-button:hover {
+    background-color: #0056b3;
+}
+
+/* 🌟 RESPONSIVE DESIGN FOR MOBILE 🌟 */
+@media screen and (max-width: 500px) {
+    #chat-container {
+        width: 95%;
+        height: 95vh;
+    }
+
+    #chat-box {
+        height: 80vh;
+    }
+
+    #user-input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #send-button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
