@@ -7,7 +7,7 @@ const responses = {
     "who created you": "I was created by Tarun Teli!",
     "what is your name": "I am a simple chatbot.",
 
-    // 🔹 GOD & SPIRITUALITY
+    //  GOD & SPIRITUALITY
     "who is god": "God is the divine power that created the universe.",
     "भगवान कौन हैं": "भगवान वह दिव्य शक्ति हैं जिन्होंने इस ब्रह्मांड को बनाया।",
 
@@ -64,7 +64,7 @@ const responses = {
 
     "how can I strengthen my faith": "Through devotion, prayer, and understanding spiritual teachings.",
     "मैं अपनी आस्था कैसे मजबूत कर सकता हूँ": "भक्ति, प्रार्थना और आध्यात्मिक शिक्षाओं को समझकर।",
-   // 🔹 Life & Success
+   //  Life & Success
     "what is life": "Life is a journey of experiences, challenges, and growth.",
     "जीवन क्या है": "जीवन अनुभवों, चुनौतियों और सीखने की यात्रा है।",
     
@@ -80,7 +80,7 @@ const responses = {
     "what is the meaning of life": "The meaning of life is to find purpose and spread happiness.",
     "जीवन का उद्देश्य क्या है": "जीवन का उद्देश्य अपने सपनों को पूरा करना और खुशियाँ फैलाना है।",
 
-    // 🔹 Happiness & Relationships
+    //  Happiness & Relationships
     "how to be happy": "Happiness comes from within. Focus on gratitude and self-improvement.",
     "खुश कैसे रहें": "खुशी भीतर से आती है। आभार प्रकट करें और आत्म-सुधार पर ध्यान दें।",
 
@@ -93,7 +93,7 @@ const responses = {
     "how to build confidence": "Believe in yourself, prepare well, and take small steps forward.",
     "आत्म-विश्वास कैसे बढ़ाएं": "खुद पर विश्वास रखें, तैयारी करें और छोटे-छोटे कदम उठाएँ।",
 
-    // 🔹 Stress & Mindset
+    //  Stress & Mindset
     "how to handle stress": "Take deep breaths, focus on solutions, and practice mindfulness.",
     "तनाव कैसे दूर करें": "गहरी सांस लें, हल निकालें और ध्यान (meditation) करें।",
 
@@ -103,7 +103,7 @@ const responses = {
     "how to deal with failure": "Failure is a part of learning. Analyze mistakes and keep improving.",
     "असफलता से कैसे निपटें": "असफलता सीखने का हिस्सा है। गलतियों का विश्लेषण करें और सुधार करें।",
 
-    // 🔹 Personal Growth & Learning
+    //  Personal Growth & Learning
     "how to develop a new habit": "Start small, be consistent, and track your progress.",
     "नयी आदत कैसे डालें": "छोटे से शुरू करें, निरंतर रहें और अपनी प्रगति ट्रैक करें।",
 
@@ -119,7 +119,7 @@ const responses = {
     "how to achieve goals faster": "Break goals into smaller steps and stay consistent.",
     "तेजी से लक्ष्य कैसे प्राप्त करें": "लक्ष्य को छोटे हिस्सों में बांटें और निरंतर रहें।",
 
-    // 🔹 Spirituality & Peace
+    //  Spirituality & Peace
     "how to find inner peace": "Meditate, avoid negativity, and stay grateful.",
     "आंतरिक शांति कैसे पाएं": "ध्यान करें, नकारात्मकता से बचें और आभारी रहें।",
 
@@ -127,7 +127,7 @@ const responses = {
     "जीवन में सकारात्मक कैसे बनें": "समाधान पर ध्यान दें, नकारात्मकता से बचें और आभार प्रकट करें।"
 };
 
-// 🌟 Image Responses (User can request images)
+//  Image Responses (User can request images)
 const imageResponses = {
     "ram image": "2.jpg",
     "elon musk image": "1.jpg",
@@ -136,7 +136,7 @@ const imageResponses = {
     "best wallpaper": "5.jpg"
 };
 
-// 📌 Function to Calculate Similarity (Levenshtein Distance)
+//  Function to Calculate Similarity (Levenshtein Distance)
 function getBestMatch(userInput) {
     let keys = Object.keys(responses);
     let bestMatch = "";
@@ -153,7 +153,7 @@ function getBestMatch(userInput) {
     return lowestDistance <= 3 ? bestMatch : null; // 3 ka matlab - agar user thoda galat likhe to bhi jawab mile
 }
 
-// 📌 Function to Send Messages
+//  Function to Send Messages
 function sendMessage() {
     let userInput = document.getElementById("user-input").value.toLowerCase().trim();
     let chatBox = document.getElementById("chat-box");
@@ -162,7 +162,7 @@ function sendMessage() {
 
     chatBox.innerHTML += `<div class="message user">${userInput}</div>`;
 
-    // 🖼️ Image Check
+    //  Image Check
     if (imageResponses[userInput]) {
         chatBox.innerHTML += `<div class="message bot">
             <img src="${imageResponses[userInput]}" alt="Requested Image" style="max-width: 100%; border-radius: 10px;">
@@ -180,14 +180,14 @@ function sendMessage() {
     document.getElementById("user-input").value = "";
 }
 
-// 📌 Function to Handle "Enter" Key
+//  Function to Handle "Enter" Key
 function handleKeyPress(event) {
     if (event.key === "Enter") {
         sendMessage();
     }
 }
 
-// 🔢 Function to Calculate Levenshtein Distance (for matching similar words)
+//  Function to Calculate Levenshtein Distance (for matching similar words)
 function levenshteinDistance(s1, s2) {
     let dp = Array(s1.length + 1)
         .fill(null)
